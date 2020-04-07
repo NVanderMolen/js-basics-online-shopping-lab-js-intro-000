@@ -54,4 +54,3 @@ function removeFromCart(item) {
    }
      cart.splice(0, cart.length);
    }
- 
