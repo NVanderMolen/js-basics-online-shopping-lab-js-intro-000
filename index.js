@@ -54,5 +54,4 @@ function removeFromCart(item) {
    } var totalPrice = total();
       cart.splice(0, cart.length);
         return `Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`
-
    }
