@@ -52,5 +52,7 @@ function removeFromCart(item) {
     if (!cardNumber) {
         return "Sorry, we don't have a credit card on file for you."
    } cart.splice(0, cart.length);
-        return `Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`
+   var totalPrice = total();
+        return `Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`
+      
    }
