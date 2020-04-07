@@ -10,21 +10,44 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+ var food = {itemName: item, itemPrice: Math.floor(100*Math.random())}
+ cart.push(food)
+ return `${food.itemName} has been added to your cart.`
 }
 
 function viewCart() {
-  // write your code here
+  var cartSentence = [];
+  if (cart.length === 0) {
+    return ("Your shopping cart is empty.");
+  }
+  else if (cart.length === 1) {
+    cartSentence.push(` ${cart[0].itemName} at $${cart[0].itemPrice}`);
+  }
+  else {
+    for (let i = 0; i < cart.length-1; i++) {
+      cartSentence.push(` ${cart[i].itemName} at $${cart[i].itemPrice}`);
+    }
+      cartSentence.push(` and ${cart[cart.length-1].itemName} at $${cart[cart.length-1].itemPrice}`);
+    }
+  return (`In your cart, you have${cartSentence}.`);
 }
 
 function total() {
-  // write your code here
+var cartTotal = 0;
+ for (let i = 0; i < getCart().length; i++) {
+  cartTotal += getCart()[i].itemPrice;
+} return cartTotal
 }
 
 function removeFromCart(item) {
-  // write your code here
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].itemName == item) {
+      cart.splice(i,1);
+      return cart;
+    }
+  } return "That item is not in your cart.";
 }
 
-function placeOrder(cardNumber) {
-  // write your code here
-}
+ function placeOrder(cardNumber) {
+   // write your code here
+ }
